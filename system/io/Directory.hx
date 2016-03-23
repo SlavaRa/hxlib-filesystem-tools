@@ -1,8 +1,8 @@
-package sys.io;
+package system.io;
 using Lambda;
 using haxe.io.Path;
 using sys.FileSystem;
-using sys.io.Path;
+using system.io.Path;
 
 /**
  * @author SlavaRa
