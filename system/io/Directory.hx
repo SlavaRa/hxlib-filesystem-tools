@@ -4,17 +4,14 @@ using haxe.io.Path;
 using sys.FileSystem;
 using system.io.Path;
 
-/**
- * @author SlavaRa
- */
 class Directory {
 
 	/**
-	 * Возвращает имена файлов (включая пути) в заданном каталоге, отвечающие условиям шаблона поиска, используя значение, которое определяет, выполнять ли поиск в подкаталогах.
-	 * @param path Каталог, в котором необходимо выполнить поиск.
-	 * @param searchPattern Строка поиска, которую необходимо сравнивать с именами файлов, на которые указывает path.
-	 * @param searchOption Одно из значений перечисления, определяющее, следует ли выполнять поиск только в текущем каталоге или также во всех его подкаталогах.
-	 * @return 
+	 * Returns the names of files (including their paths) that match the specified search pattern in the specified directory.
+	 * @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
+	 * @param searchPattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters (see Remarks), but doesn't support regular expressions.
+	 * @param searchOption One of the enumeration values that specifies whether the search operation should include all subdirectories or only the current directory.
+	 * @return An array of the full names (including paths) for the files in the specified directory that match the specified search pattern and option, or an empty array if no files are found.
 	 */
 	public static inline function getFiles(path:String, searchPattern:String, searchOption:SearchOption):Array<String> {
 		return _getFiles(path.addTrailingSlash(), searchPattern, searchOption, []);
